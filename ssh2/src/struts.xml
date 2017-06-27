@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software 
+Foundation//DTD Struts Configuration 2.5//EN"
+"http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+
+    <constant name="struts.objectFactory" value="spring" />
+    <!--<constant name="struts.enable.DynamicMethodInvocation" value="false" />-->
+
+    <package name="user" extends="struts-default">
+        <action name="user_*" class="action.UserAction" method="{1}">
+            <result name="success">index.jsp</result>
+            <result name="detail">userdetail.jsp</result>
+            <allowed-methods>insert, delete, update, findByUserid, findByAny</allowed-methods>
+        </action>
+    </package>
+
+</struts>    
